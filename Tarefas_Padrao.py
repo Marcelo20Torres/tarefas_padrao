@@ -104,32 +104,20 @@ def filtrar_planilha():
     deletar = 50
     next_row = 0
         
-
-
     for row in range(2, deletar + 1):
         for col in sheetI.iter_cols(min_row=row, max_row=row):
             for cell in col:
                 cell.value = None
-
 
     for i, linha in enumerate(dados, start=linha_inicio):
         for j, valor in enumerate(linha, start=2):
             sheetI.cell(row=i, column=j, value=valor)
             next_row = i
 
-        
-    
-
-
     for row in range(2, next_row + 1):
         sheetI[f'A{row}'] = cnpj
         
-
-        
-
     WbI.save(caminho_importacao)
-
-    
 
     CTkMessagebox(title="Finalizado", message="Planilha de Tarefas criada com sucesso!", icon="check")
 
