@@ -49,7 +49,7 @@ def filtrar_planilha():
     if regime == "Simples Nacional (LC Presum":
         Aba = "Simples Nacional (LC Presum"
         
-    caminho = Path(__file__).parent / 'TAREFAS PADRÃO NUUBES IND COM E SERVICOS_v65_04_04_2024.xlsx'
+    caminho = './TAREFAS PADRÃO NUUBES IND COM E SERVICOS_v65_04_04_2024.xlsx'
         
     df = pd.read_excel(caminho, sheet_name=f'{Aba}', header=1)
         
@@ -93,7 +93,7 @@ def filtrar_planilha():
 
     resultado = df_filtrado[['Área','Tipo de tarefa']]
     print(resultado)
-    caminho_importacao = Path(__file__).parent / 'planilha_tarefas_clientes.xlsx'
+    caminho_importacao = './planilha_tarefas_clientes.xlsx'
 
     WbI = load_workbook(caminho_importacao)
     sheetI = WbI['Planilha Modelo Tipo de Tarefas']
@@ -129,7 +129,7 @@ janela.geometry("600x400")
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-caminho_imagem = Path(__file__).parent / "logo-colorida.png"
+caminho_imagem = "./logo-colorida.png"
 imagem_pil = Image.open(caminho_imagem)
 imagem = ctk.CTkImage(dark_image=imagem_pil, size=(200, 46))
 imagem_simples = ctk.CTkLabel(janela, image=imagem, text="")
